@@ -2,13 +2,19 @@
 #include "s21_string.h"
 
 int main() {
-    char buf[10] = {NULL};
+    char buf[10];
     char *huk = NULL;
     int i = s21_sprintf(buf, "Hello");
     printf("error - %d\n", i);
     printf("string - %s\n", buf);
     return 0;
 }
+
+// %[flags][width][.precision][length]specifier
+// flags (space, -, +, #, 0)
+// width ((number), *)
+// .precision (.number, .*)
+//https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
 
 int s21_sprintf(char *str, const char *format, ...) {
     int err = 0;
