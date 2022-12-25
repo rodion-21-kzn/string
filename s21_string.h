@@ -14,7 +14,7 @@
 
 #define s21_size_t unsigned long long
 #define s21_NULL (void*)
-#define s21_buf_size 100
+#define s21_buf_size 1000
 
 typedef struct format_token {
     int minus;
@@ -30,9 +30,9 @@ typedef struct format_token {
 
 int s21_sprintf(char *str, const char *format, ...);
 void init_format_token(format_token *tok);
-void parse_length(char **f, format_token *tok);
+char* parse_length(char *f, format_token *tok);
 char* parse_flag(char *f, format_token *tok);
-void parse_prec(char **f, format_token *tok, va_list args);
+char* parse_prec(char *f, format_token *tok, va_list args);
 char* parse_width(char *f, format_token *tok, va_list args);
 void parse_spec(char **f, format_token *tok);
 
